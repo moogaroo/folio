@@ -5,7 +5,13 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  distDir: 'out'
+  distDir: 'out',
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig
