@@ -1,0 +1,115 @@
+/* Container layout */
+.container-layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left panel styles */
+.left-panel {
+  width: 50%;
+  min-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 2rem;
+}
+
+/* Right panel styles */
+.right-panel {
+  width: 50%;
+  min-height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile layout adjustments */
+@media (max-width: 768px) {
+  .container-layout {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    position: relative;
+    min-height: auto;
+  }
+
+  .right-panel {
+    order: -1;
+    height: 40vh;
+  }
+}
+
+/* Balloon container styles */
+.balloon-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Profile with balloons */
+.profile-with-balloons {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 4;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover .profile-with-balloons {
+  transform: translateY(-5px);
+}
+
+/* Balloon animations */
+.balloon {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  z-index: 3;
+  transition: transform 0.3s ease;
+}
+
+.balloon-1 {
+  top: 10px;
+  left: 80px;
+}
+
+.balloon-2 {
+  top: 5px;
+  left: 50px;
+}
+
+.balloon-3 {
+  top: 15px;
+  left: 20px;
+}
+
+.profile-card:hover .balloon {
+  transform: translateY(-8px);
+}
+
+/* Brutalist theme balloon container */
+.brutalist-balloon-container {
+  position: relative;
+}
+
+/* Project navigation cursor styles */
+.project-nav-cursor-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+}

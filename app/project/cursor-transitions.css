@@ -1,0 +1,34 @@
+/* Cursor transition styles */
+.cursor-transition-container {
+  cursor: none;
+}
+
+/* Ensure smooth transitions for all cursor elements */
+[id$="-cursor"],
+[id$="-info"] {
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out !important;
+}
+
+/* Ensure carousel cursors have smooth transitions */
+.image-carousel-container .custom-cursor,
+.snap-carousel-container .custom-cursor {
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out !important;
+}
+
+/* Prevent cursor flicker during transitions */
+.cursor-none * {
+  cursor: none !important;
+}
+
+/* Ensure cursor visibility during transitions */
+.cursor-transition-active {
+  opacity: 1 !important;
+}
+
+/* Improve cursor performance */
+.custom-cursor {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}

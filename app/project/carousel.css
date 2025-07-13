@@ -1,0 +1,69 @@
+/* Carousel styles for project pages */
+.project-carousel {
+  width: 100%;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.project-carousel-container {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-carousel-slide {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.project-carousel-caption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Carousel navigation */
+.project-carousel-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.project-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.project-carousel-dot.active {
+  background-color: #000;
+}
+
+/* Brutalist theme carousel */
+.brutalist-theme .project-carousel-container {
+  border-radius: 0;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.brutalist-theme .project-carousel-dot {
+  border-radius: 0;
+  width: 10px;
+  height: 10px;
+}
+
+/* Yellow theme carousel */
+.yellow-theme .project-carousel-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.yellow-theme .project-carousel-dot.active {
+  background-color: #f9c657;
+}

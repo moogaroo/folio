@@ -1,0 +1,61 @@
+/* Custom fonts */
+
+/* Cooper Hewitt */
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url("/fonts/CooperHewitt-Light.woff2") format("woff2"), url("/fonts/CooperHewitt-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url("/fonts/CooperHewitt-Book.woff2") format("woff2"), url("/fonts/CooperHewitt-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url("/fonts/CooperHewitt-Bold.woff2") format("woff2"), url("/fonts/CooperHewitt-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Kollectif */
+@font-face {
+  font-family: "Kollectif";
+  src: url("/fonts/Kollectif.woff2") format("woff2"), url("/fonts/Kollectif.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kollectif";
+  src: url("/fonts/Kollectif-Bold.woff2") format("woff2"), url("/fonts/Kollectif-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gidole */
+@font-face {
+  font-family: "Gidole";
+  src: url("/fonts/Gidole-Regular.woff2") format("woff2"), url("/fonts/Gidole-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Sifonn */
+@font-face {
+  font-family: "Sifonn";
+  src: url("/fonts/SIFONN_PRO.woff2") format("woff2"), url("/fonts/SIFONN_PRO.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

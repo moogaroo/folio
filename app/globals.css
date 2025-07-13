@@ -1,0 +1,566 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/GT-America-Standard-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/GT-America-Standard-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/GT-America-Standard-Regular-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --h1-font: "Courier New", monospace, system-ui, sans-serif;
+  --h2-font: "Courier New", monospace, system-ui, sans-serif;
+  --h3-font: "Courier New", monospace, system-ui, sans-serif;
+  --h4-font: "Courier New", monospace, system-ui, sans-serif;
+  --body-font: "Courier New", monospace, system-ui, sans-serif;
+  --h1-weight: 700;
+  --h2-weight: 700;
+  --h3-weight: 700;
+  --h4-weight: 700;
+  --body-weight: 400;
+  --h1-transform: none;
+  --h2-transform: none;
+  --h3-transform: none;
+  --h4-transform: none;
+  --body-transform: none;
+}
+
+/* Theme variables */
+.brutalist-theme {
+  --primary-color: #ff5722;
+  --secondary-color: #607d8b;
+  --accent-color: #ffc107;
+  --background-color: #f1f1f1;
+  --text-color: #2d2d2d;
+  --border-color: #2d2d2d;
+  --border-width: 2px;
+  --border-radius: 0;
+}
+
+.yellow-theme {
+  --primary-color: #f9c657;
+  --secondary-color: #8486de;
+  --accent-color: #ffb096;
+  --background-color: #ffffff;
+  --text-color: #444444;
+  --border-color: #dddddd;
+  --border-width: 1px;
+  --border-radius: 8px;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--background-color);
+  font-family: var(--body-font);
+  overflow-x: hidden;
+}
+
+/* Clear Typography Hierarchy - All h1s look the same, all h2s look the same, etc. */
+h1 {
+  font-size: 32px !important;
+  font-weight: var(--h1-weight) !important;
+  line-height: 1.2 !important;
+  font-family: var(--h1-font) !important;
+  text-transform: var(--h1-transform) !important;
+}
+
+h2 {
+  font-size: 24px !important;
+  font-weight: var(--h2-weight) !important;
+  line-height: 1.3 !important;
+  font-family: var(--h2-font) !important;
+  text-transform: var(--h2-transform) !important;
+}
+
+h3 {
+  font-size: 20px !important;
+  font-weight: var(--h3-weight) !important;
+  line-height: 1.4 !important;
+  font-family: var(--h3-font) !important;
+  text-transform: var(--h3-transform) !important;
+}
+
+h4 {
+  font-size: 18px !important;
+  font-weight: var(--h4-weight) !important;
+  line-height: 1.4 !important;
+  font-family: var(--h4-font) !important;
+  text-transform: var(--h4-transform) !important;
+}
+
+p,
+span,
+div,
+a,
+li,
+button {
+  font-size: 16px;
+  font-weight: var(--body-weight);
+  line-height: 1.5;
+  font-family: var(--body-font) !important;
+  text-transform: var(--body-transform);
+}
+
+/* Utility classes for consistent styling */
+.heading-text {
+  font-size: 32px !important;
+  font-weight: var(--h1-weight) !important;
+  line-height: 1.2 !important;
+  font-family: var(--h1-font) !important;
+  text-transform: var(--h1-transform) !important;
+}
+
+.subheading-text {
+  font-size: 24px !important;
+  font-weight: var(--h2-weight) !important;
+  line-height: 1.3 !important;
+  font-family: var(--h2-font) !important;
+  text-transform: var(--h2-transform) !important;
+}
+
+.regular-text {
+  font-size: 16px;
+  font-weight: var(--body-weight);
+  line-height: 1.5;
+  font-family: var(--body-font) !important;
+  text-transform: var(--body-transform);
+}
+
+.secondary-text {
+  font-size: 14px;
+  font-weight: var(--body-weight);
+  line-height: 1.4;
+  color: #666666;
+  font-family: var(--body-font) !important;
+  text-transform: var(--body-transform);
+}
+
+/* Override any responsive styles that might affect hierarchy */
+@media (max-width: 768px) {
+  h1,
+  .heading-text {
+    font-size: 28px !important;
+  }
+
+  h2,
+  .subheading-text {
+    font-size: 22px !important;
+  }
+
+  h3 {
+    font-size: 18px !important;
+  }
+
+  h4 {
+    font-size: 16px !important;
+  }
+}
+
+/* Brutalist accent styling */
+.brutalist-accent {
+  position: relative;
+  z-index: 1;
+}
+
+.brutalist-theme .brutalist-accent::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--accent-color);
+  z-index: -1;
+}
+
+/* Card styling */
+.brutalist-card {
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: white;
+}
+
+/* Project navigation cursor styling */
+.project-nav-cursor-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-out;
+}
+
+.project-nav-cursor-container:hover {
+  transform: scale(1.1);
+}
+
+/* Cursor styling */
+.cursor-none {
+  cursor: none;
+}
+
+/* Transition overlay */
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid var(--primary-color);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Balloon pop animation */
+.balloon-pop {
+  animation: pop 0.3s ease-out forwards;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Snap carousel styling */
+.snap-carousel {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.snap-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  width: 100%;
+}
+
+.snap-carousel-item-content {
+  padding: 0 8px;
+}
+
+/* YouTube embed styling */
+.youtube-embed-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.youtube-embed-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+}
+
+.youtube-embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Left panel background */
+.left-panel-bg {
+  position: relative;
+  background-color: var(--background-color);
+}
+
+/* Mobile view specific styles */
+.mobile-view .heading-text {
+  font-size: 24px;
+}
+
+.mobile-view .subheading-text {
+  font-size: 20px;
+}
+
+.mobile-view .regular-text {
+  font-size: 14px;
+}
+
+.mobile-view .secondary-text {
+  font-size: 12px;
+}
+
+/* Additional styles that might have been in styled-jsx tags */
+.transition-manager-styles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.transitioning .transition-overlay {
+  opacity: 1;
+}
+
+/* Vintage TV effect styles */
+.vintage-tv-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.vintage-tv-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.vintage-tv-scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.vintage-tv-noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%%22 height=%22100%%22 filter=%22url(%23noise)%22 fill=%22%23ffffff%22/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.vintage-tv-flicker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(120, 120, 255, 0.01);
+  opacity: 0;
+  animation: flicker 0.15s infinite alternate;
+  pointer-events: none;
+  z-index: 12;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.tv-turn-on {
+  animation: turnOn 1s ease-in-out;
+}
+
+@keyframes turnOn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+    filter: brightness(30);
+  }
+  30% {
+    transform: scale(1.05);
+    opacity: 1;
+    filter: brightness(5);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+/* Custom carousel cursor styles */
+body.carousel-hover,
+body.carousel-hover * {
+  cursor: none !important;
+}
+
+.custom-carousel-cursor svg {
+  color: inherit;
+}
+
+/* Profile container styles */
+.brutalist-profile {
+  box-shadow: 5px 5px 0 #000000;
+  transition: transform 0.3s ease;
+}
+
+.brutalist-profile:hover {
+  transform: translateX(-2px) translateY(-2px);
+  box-shadow: 7px 7px 0 #000000;
+}
+
+.yellow-profile {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.yellow-profile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Remove the old balloon styles that are no longer needed */
+.balloon-container {
+  display: none;
+}
+
+/* Active project styling for mobile */
+.project-item-mobile.active-project {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.yellow-theme .project-item-mobile.active-project {
+  background-color: #f8f8f8 !important;
+}
+
+.brutalist-theme .project-item-mobile.active-project {
+  background-color: white !important;
+  border: 2px solid #2d2d2d !important;
+}
+
+/* Add these CSS classes at the end of the file */
+
+/* Smooth content transitions */
+.content-transition {
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Optimize performance for animated elements */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Smooth horizontal scrolling */
+.horizontal-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Improve touch interactions */
+.touch-action-pan-x {
+  touch-action: pan-x;
+}
+
+/* Prevent layout shifts during transitions */
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Brutalist theme styles */
+.brutalist-theme {
+  font-family: var(--body-font);
+}
+
+.brutalist-theme body {
+  font-family: var(--body-font) !important;
+}
+
+.brutalist-theme .heading-text,
+.brutalist-theme h1,
+.brutalist-theme h2 {
+  font-family: var(--h1-font) !important;
+}
+
+.brutalist-theme .subheading-text,
+.brutalist-theme h3,
+.brutalist-theme h4 {
+  font-family: var(--h3-font) !important;
+}
+
+.brutalist-theme .regular-text,
+.brutalist-theme .secondary-text,
+.brutalist-theme p,
+.brutalist-theme span,
+.brutalist-theme div {
+  font-family: var(--body-font) !important;
+}

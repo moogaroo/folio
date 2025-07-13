@@ -1,0 +1,80 @@
+/* Balloon styles */
+.balloon {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  z-index: 3;
+  transition: transform 0.3s ease;
+}
+
+.balloon-1 {
+  top: 10px;
+  left: 80px;
+}
+
+.balloon-2 {
+  top: 5px;
+  left: 50px;
+}
+
+.balloon-3 {
+  top: 15px;
+  left: 20px;
+}
+
+/* Balloon animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.balloon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.balloon-1 {
+  animation-delay: 0s;
+}
+
+.balloon-2 {
+  animation-delay: 0.5s;
+}
+
+.balloon-3 {
+  animation-delay: 1s;
+}
+
+/* Balloon pop animation */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.balloon-pop {
+  animation: pop 0.5s forwards;
+}
+
+/* Brutalist theme balloons */
+.brutalist-theme .balloon {
+  border-radius: 0;
+  border: 3px solid #000000;
+}
+
+.brutalist-theme .balloon-container {
+  position: relative;
+}
