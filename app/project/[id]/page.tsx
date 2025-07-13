@@ -37,7 +37,7 @@ export default function ProjectPage() {
   const [anchorLinks, setAnchorLinks] = useState([])
 
   // Get anchor links based on project ID
-  const getAnchorLinks = (projectId, language) => {
+ const getAnchorLinks = (projectId: string, language: string) => {
     if (projectId === "addressing-crisis") {
       return [
         { id: "context-section", label: language === "fr" ? "Contexte" : "Context" },
