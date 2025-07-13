@@ -1,0 +1,32 @@
+{
+  "profile": {
+    "name": "Morgan Ross",
+    "title": "Senior Product Designer • 11 yrs",
+    "email": "morgan.ROOOOO@gmail.com",
+    "location": "Paris and Clermont-Ferrand, France",
+    "description": [
+      "PROACTIVE SOLUTIONIST – I love to turn challenges into opportunities through design",
+      "COLLABORATIVE – I enjoy working in a team, communicating my ideas, listening to others, and decisions",
+      "RIGOROUS – I always rely on data and pay close attention to details",
+      "CREATIVE – I love to innovate, even more maybe within constraints"
+    ]
+  },
+  "skills": [
+    "User Research",
+    "Prototyping",
+    "Figma",
+    "AI tools",
+    "Design System",
+    "Cognitive sc.",
+    "HTML / CSS",
+    "3d archi (perso)"
+  ],
+  "projects": [
+    {
+      "id": "big-picture",
+      "title": "The big picture : +60% over 5 years of optimization",
+      "tags": ["E-commerce", "Conversion", "User Experience"],
+      "company": "Disneyland Paris"
+    }
+  ]
+}
