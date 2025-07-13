@@ -276,7 +276,7 @@ export const projects = [
     <p>Set toggle-on / toggle-off feature, so each market can activate it according their data.</p>
   `,
     tags: ["Business", "A/B Testing", "UX Research"],
-    date: "2023",
+    period: "2023",
     client: "Disneyland Paris",
     role: "Senior Product Designer",
   },
