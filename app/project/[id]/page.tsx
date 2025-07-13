@@ -22,6 +22,13 @@ import CovidDesignSprint from "@/components/covid-design-sprint"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
 import "./anchor-navigation.css"
 
+// Générer les pages statiques pour tous les projets
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    id: project.id,
+  }))
+}
+
 export default function ProjectPage() {
   const params = useParams()
   const router = useRouter()
